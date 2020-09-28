@@ -36,8 +36,12 @@ class SnakeAndLadder{
                       CurrentPosition = CurrentPosition;
                       break;
                   }
-              System.out.println("Dice value is: " +DICE+ " for " +Action+ " and the currentpostion is: " +CurrentPosition);
+              System.out.println("Dice value is: " +DICE+ " for " +Action+ " then currentpostion is: " +CurrentPosition);
               }
+             else
+             { 
+                CurrentPosition = CurrentPosition;
+             }
       }
          return CurrentPosition;
      }
