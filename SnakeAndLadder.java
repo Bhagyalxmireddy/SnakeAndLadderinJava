@@ -9,6 +9,8 @@ class SnakeAndLadder{
    int CurrentPosition = 0;
      public int gamePlayed()
      {
+      for(int CurrentPosition = 0; CurrentPosition <= 100;)
+       {
          if(CurrentPosition < ENDINGPOSITION)
            {
                int DICE = (int)Math.floor(Math.random()*10)%6;
@@ -36,6 +38,7 @@ class SnakeAndLadder{
                   }
               System.out.println("Dice value is: " +DICE+ " for " +Action+ " and the currentpostion is: " +CurrentPosition);
               }
+      }
          return CurrentPosition;
      }
 
