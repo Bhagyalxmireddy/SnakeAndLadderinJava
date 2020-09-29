@@ -8,7 +8,8 @@ class SnakeAndLadder{
    static String Action;
    int CurrentPosition = 0;
    int DiecCount;
-     public int gamePlayed(int CurrentPosition, int DiceCount)
+   
+     public static void gamePlayed()
      {
 //      for(int CurrentPosition = 0; CurrentPosition <= 100;)
   //     {
@@ -91,10 +92,7 @@ class SnakeAndLadder{
     public static void main(String args[])
     {
     	System.out.println("Welcome to SnakeAndLadder Game");
-        SnakeAndLadder played = new SnakeAndLadder();
-	played.twoPlayers(0);
-
-
+        gamePlayed();
     }
 
 
