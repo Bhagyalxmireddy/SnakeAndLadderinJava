@@ -10,8 +10,8 @@ class SnakeAndLadder{
    int DiecCount;
      public int gamePlayed(int CurrentPosition, int DiceCount)
      {
-      for(int CurrentPosition = 0; CurrentPosition <= 100;)
-       {
+//      for(int CurrentPosition = 0; CurrentPosition <= 100;)
+  //     {
          if(CurrentPosition < ENDINGPOSITION)
            {
                int DICE = (int)Math.floor(Math.random()*10)%6;
@@ -37,13 +37,13 @@ class SnakeAndLadder{
                       CurrentPosition = CurrentPosition;
                       break;
                   }
-              System.out.println("Dice value is: " +DICE+ " for " +Action+ " then currentpostion is: " +CurrentPosition);
-              }
-             else
+        		      System.out.println("Dice value is: " +DICE+ " for " +Action+ " then currentpostion is: " +CurrentPosition);
+              		}
+            		 else
              { 
                 CurrentPosition = CurrentPosition;
              }
-      }
+    //  }
        if(Action == "Ladder" && CurrentPosition != ENDINGPOSITION)
        {
            DiceCount = numOfTimesDicePlayed(DiceCount);
@@ -55,9 +55,38 @@ class SnakeAndLadder{
     {
       diceCount++;
       return diceCount;
-      SnakeAndLadder player = new SnakeAndLadder();
-      player.gamePlayed(0, 0);
     }
+	public void twoPlayers()
+	{
+		int Player1position = STARTINGPOSITION ;
+		int Player2position = STARTINGPOSITION ;
+		int dice_count = STARTINGPOSITION ;
+		System.out.println("Game Started by two player");
+		while( Player1position < ENDINGPOSITION && Player2position < ENDINGPOSITION )
+		{
+			System.out.println("Player 1 :-  ");
+			Player1position = GamePlayed(Player1position,dice_count);
+			dice_count = dice_Player(dice_count);
+			if(Player1position == ENDINGPOSITION)
+			{
+				break;
+			}
+			System.out.println("Player 2 :-  ");
+			Player2position = GamePlayed(Player2position,dice_count);
+			dice_count = dice_Player(dice_count);
+		}
+		if(Player1position == ENDINGPOSITION)
+		{
+			System.out.println();
+			System.out.println("Player 1 Won The Match ");
+		}
+		else if(Player2position == ENDINGPOSITION)
+		{
+			System.out.println();
+			System.out.println("Player 2 Won The Match ");
+		}
+		System.out.println("Total Dice Count of both Players "+dice_count);
+	}
 
     public static void main(String args[])
     {
@@ -65,7 +94,7 @@ class SnakeAndLadder{
       //SnakeAndLadder player = new SnakeAndLadder();
       SnakeAndLadder played = new SnakeAndLadder();
       //player.gamePlayed(0, 0);
-      played.numOfTimesDicePlayed(0);
+      played.twoPlayers(0);
      }
  
 
