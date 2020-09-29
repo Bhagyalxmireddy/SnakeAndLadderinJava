@@ -11,7 +11,10 @@ class SnakeAndLadder{
      {
 	int Position = STARTINGPOSITION;
          if(Position <= ENDINGPOSITION)
-           {
+             {
+                while( Position != ENDINGPOSITION )
+                          
+               {
                int DICE = (int)Math.floor(Math.random()*10)%6;
                int ChooseOption = (int)Math.floor(Math.random()*10)%3;
                  switch(ChooseOption)
@@ -77,6 +80,7 @@ class SnakeAndLadder{
 	}
               		System.out.println("Dice value is: " +DICE+ " for " +Action+ " and the currentpostion is: " +Position);
 	   }
+
      }
 
     public static void main(String args[])
