@@ -4,7 +4,7 @@ class SnakeAndLadder{
    static final int LADDER = 1;
    static final int SNAKE = 2;
    
-     public int gamePlayed()
+     public static void gamePlayed()
      {
           double DICE = Math.floor(Math.random()*10)%6;
      }
@@ -12,8 +12,9 @@ class SnakeAndLadder{
 
     public static void main(String args[])
     {
-      System.out.println("Welcome to SnakeAndLadder Game");
-     }
- 
+    	System.out.println("Welcome to SnakeAndLadder Game");
+        gamePlayed();
+    }
+
 
 }
