@@ -10,31 +10,43 @@ class SnakeAndLadder{
      public  void gamePlayed()
      {
 	int Position = STARTINGPOSITION;
-         if(Position <= ENDINGPOSITION)
-             {
-                while( Position != ENDINGPOSITION )
+              if(Position <= ENDINGPOSITION)
+                {
+                       while( Position != ENDINGPOSITION )
+                      {
+                                int DICE = (int)Math.floor(Math.random()*10)%6;
+                                int ChooseOption = (int)Math.floor(Math.random()*10)%3;
+                                switch(ChooseOption)
+                                {
+                                        case LADDER:
+                                                Action = "Ladder";
+                                                int CurrentPosition = Position + DICE;
+                                                if(CurrentPosition > ENDINGPOSITION)
+                                                {
+                                                        System.out.println("NOPLAY");
+                                                }
+                                                else
+                                                {
+                                                        Position = Position + DICE;
+                                                }
+                                        break;
+                                        case SNAKE:
+                                                Action = "snake";
+                                                Position = Position - DICE;
+                                                if(Position < 0)
+                                                {
+                                                        Position = 0;
+                                                }
+                                                break;
+                                        case NOPLAY:
+                                                Action = "Noplay";
+                                                Position = Position;
+                                                break;
+                                }
+                        System.out.println("Dice value is: " +DICE+ " for " +Action+ " and the currentpostion is: " +Position);
+                    }
+          }
                           
-               {
-               int DICE = (int)Math.floor(Math.random()*10)%6;
-               int ChooseOption = (int)Math.floor(Math.random()*10)%3;
-                 switch(ChooseOption)
-                  {
-                     case LADDER:
-  			Action = "Ladder";
-                        Position = Position + DICE;
-
-                     break;
-                      case SNAKE:
-                           Action = "snake";
-                          Position = Position - DICE;
-                     break;
-                     case NOPLAY:
-                      Action = "Noplay";
-                      Position = Position;
-                      break;
-                  }
-			System.out.println("Dice value is: " +DICE+ " for " +Action+ " and the currentpostion is: " +Position);
-             }
        if(Action == "Ladder" && CurrentPosition != ENDINGPOSITION)
        {
            DiceCount = numOfTimesDicePlayed(DiceCount);
@@ -81,6 +93,43 @@ class SnakeAndLadder{
               		System.out.println("Dice value is: " +DICE+ " for " +Action+ " and the currentpostion is: " +Position);
 	   }
 
+
+         	if(Position <= ENDINGPOSITION)
+                {
+                       while( Position != ENDINGPOSITION )
+		      {
+               	      		int DICE = (int)Math.floor(Math.random()*10)%6;
+               			int ChooseOption = (int)Math.floor(Math.random()*10)%3;
+                 		switch(ChooseOption)
+                  		{
+                     			case LADDER:
+  						Action = "Ladder";
+                        		    	int CurrentPosition = Position + DICE;
+						if(CurrentPosition > ENDINGPOSITION)
+						{
+							System.out.println("NOPLAY");
+						}
+						else
+						{	
+							Position = Position + DICE;
+						}
+					break;
+                     			case SNAKE:
+                           			Action = "snake";
+                          			Position = Position - DICE;
+                                                if(Position < 0)
+                                                {
+ 							Position = 0;
+                                                }
+                     				break;
+                     			case NOPLAY:
+                     	 			Action = "Noplay";
+                      				Position = Position;
+                     				break;
+                  		}
+              		System.out.println("Dice value is: " +DICE+ " for " +Action+ " and the currentpostion is: " +Position);
+                    }
+          }
      }
 
     public static void main(String args[])
