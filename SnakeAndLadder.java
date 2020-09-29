@@ -6,13 +6,13 @@ class SnakeAndLadder{
    static final int SNAKE = 2;
    static final int NOPLAY = 0;
    static String Action;
+   static final int PLAYER1 = 1;
+   static final int PLAYER2 = 2;
    int CurrentPosition = 0;
-   int DiecCount;
-     public int gamePlayed(int CurrentPosition, int DiceCount)
+   int DiceCount = 0; 
+     public static int gamePlayed(int CurrentPosition, int DiceCount)
      {
-      for(int CurrentPosition = 0; CurrentPosition <= 100;)
-       {
-         if(CurrentPosition < ENDINGPOSITION)
+         if( CurrentPosition < ENDINGPOSITION )
            {
                int DICE = (int)Math.floor(Math.random()*10)%6;
                int ChooseOption = (int)Math.floor(Math.random()*10)%3;
@@ -43,29 +43,24 @@ class SnakeAndLadder{
              { 
                 CurrentPosition = CurrentPosition;
              }
-      }
        if(Action == "Ladder" && CurrentPosition != ENDINGPOSITION)
        {
+           int DicesCount = SnakeAndLadder.numOfTimesDicePlayed(0);
            DiceCount = numOfTimesDicePlayed(DiceCount);
-           gamePlayed(CurrentPositin, DiceCount);
+           gamePlayed(100, DicesCount);
        } 
       return CurrentPosition; 
       }
-     public int numOfTimesDiceplayed(int diceCount)
+     public static int numOfTimesDicePlayed(int diceCount)
     {
       diceCount++;
       return diceCount;
-      SnakeAndLadder player = new SnakeAndLadder();
-      player.gamePlayed(0, 0);
-    }
+     }
 
     public static void main(String args[])
     {
-      System.out.println("Welcome to SnakeAndLadder Game");
-      //SnakeAndLadder player = new SnakeAndLadder();
-      SnakeAndLadder played = new SnakeAndLadder();
-      //player.gamePlayed(0, 0);
-      played.numOfTimesDicePlayed(0);
+      	System.out.println("Welcome to SnakeAndLadder Game");
+      	int Result = SnakeAndLadder.gamePlayed(0, 0);
      }
  
 
