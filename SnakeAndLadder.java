@@ -6,45 +6,51 @@ class SnakeAndLadder{
    static final int SNAKE = 2;
    static final int NOPLAY = 0;
    static String Action;
-   int CurrentPosition = 0;
-     public int gamePlayed()
+     public  void gamePlayed()
      {
-         if(CurrentPosition < ENDINGPOSITION)
+	int Position = STARTINGPOSITION;
+  	int Dicecount = 0;
+         if(Position <= ENDINGPOSITION)
            {
                int DICE = (int)Math.floor(Math.random()*10)%6;
                int ChooseOption = (int)Math.floor(Math.random()*10)%3;
                  switch(ChooseOption)
                   {
                      case LADDER:
-                     if(CurrentPosition + DICE <= ENDINGPOSITION)
-                     {
-                         Action = "Ledder";
-                         CurrentPosition = CurrentPosition + DICE;
-                     }
+  			Action = "Ladder";
+                        int CurrentPosition = Position + DICE;
+                    	if(CurrentPosition > ENDINGPOSITION)
+			{
+				System.out.println("NOPLAY");
+			}
+			else
+			{
+				Position = Position + DICE;		
+			}
+
                      break;
                       case SNAKE:
-                     if(CurrentPosition - DICE >= STARTINGPOSITION)
-                     {
-                          Action = "snake";
-                          CurrentPosition = CurrentPosition - DICE;
-                     }
+                           Action = "snake";
+                          Position = Position - DICE;
+                          
                      break;
                      case NOPLAY:
                       Action = "Noplay";
-                      CurrentPosition = CurrentPosition;
+                      Position = Position;
                       break;
                   }
-              System.out.println("Dice value is: " +DICE+ " for " +Action+ " and the currentpostion is: " +CurrentPosition);
-              }
-         return CurrentPosition;
+              		System.out.println("Dice value is: " +DICE+ " for " +Action+ " and the currentpostion is: " +Position);
+  	      		Dicecount ++;
+	          	System.out.println("Dicecount is:" +Dicecount);
+	   }
      }
 
     public static void main(String args[])
     {
-      System.out.println("Welcome to SnakeAndLadder Game");
-      SnakeAndLadder player = new SnakeAndLadder();
-      player.gamePlayed();
-     }
- 
+    	System.out.println("Welcome to SnakeAndLadder Game");
+        SnakeAndLadder player = new SnakeAndLadder();
+	player.gamePlayed();
+    }
+
 
 }
