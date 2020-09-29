@@ -5,8 +5,8 @@ class SnakeAndLadder{
    static final int SNAKE = 2;
     public static void main(String args[])
     {
-      System.out.println("Welcome to SnakeAndLadder Game");
-     }
+    	System.out.println("Welcome to SnakeAndLadder Game");
+    }
 
 
 }
