@@ -7,7 +7,8 @@ class SnakeAndLadder{
    static final int NOPLAY = 0;
    static String Action;
    int CurrentPosition = 0;
-     public int gamePlayed()
+   int DiecCount;
+     public int gamePlayed(int CurrentPosition, int DiceCount)
      {
       for(int CurrentPosition = 0; CurrentPosition <= 100;)
        {
@@ -43,14 +44,28 @@ class SnakeAndLadder{
                 CurrentPosition = CurrentPosition;
              }
       }
-         return CurrentPosition;
-     }
+       if(Action == "Ladder" && CurrentPosition != ENDINGPOSITION)
+       {
+           DiceCount = numOfTimesDicePlayed(DiceCount);
+           gamePlayed(CurrentPositin, DiceCount);
+       } 
+      return CurrentPosition; 
+      }
+     public int numOfTimesDiceplayed(int diceCount)
+    {
+      diceCount++;
+      return diceCount;
+      SnakeAndLadder player = new SnakeAndLadder();
+      player.gamePlayed(0, 0);
+    }
 
     public static void main(String args[])
     {
       System.out.println("Welcome to SnakeAndLadder Game");
-      SnakeAndLadder player = new SnakeAndLadder();
-      player.gamePlayed();
+      //SnakeAndLadder player = new SnakeAndLadder();
+      SnakeAndLadder played = new SnakeAndLadder();
+      //player.gamePlayed(0, 0);
+      played.numOfTimesDicePlayed(0);
      }
  
 
