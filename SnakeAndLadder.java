@@ -90,12 +90,12 @@ class SnakeAndLadder{
 
     public static void main(String args[])
     {
-      System.out.println("Welcome to SnakeAndLadder Game");
-      //SnakeAndLadder player = new SnakeAndLadder();
-      SnakeAndLadder played = new SnakeAndLadder();
-      //player.gamePlayed(0, 0);
-      played.twoPlayers(0);
-     }
- 
+    	System.out.println("Welcome to SnakeAndLadder Game");
+        SnakeAndLadder played = new SnakeAndLadder();
+	played.twoPlayers(0);
+
+
+    }
+
 
 }
