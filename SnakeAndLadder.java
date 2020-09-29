@@ -40,7 +40,7 @@ class SnakeAndLadder{
               System.out.println("Dice value is: " +DICE+ " for " +Action+ " then currentpostion is: " +CurrentPosition);
               }
              else
-             { 
+             {
                 CurrentPosition = CurrentPosition;
              }
        if(Action == "Ladder" && CurrentPosition != ENDINGPOSITION)
@@ -48,8 +48,8 @@ class SnakeAndLadder{
            int DicesCount = SnakeAndLadder.numOfTimesDicePlayed(0);
            DiceCount = numOfTimesDicePlayed(DiceCount);
            gamePlayed(100, DicesCount);
-       } 
-      return CurrentPosition; 
+       }
+      return CurrentPosition;
       }
      public static int numOfTimesDicePlayed(int diceCount)
     {
