@@ -6,7 +6,7 @@ class SnakeAndLadder{
    static final int SNAKE = 2;
    static final int NOPLAY = 0;
    static String Action;
-   
+   static Random random = new Random();
      public  void gamePlayed()
      {
 	int Position = STARTINGPOSITION;
@@ -15,8 +15,9 @@ class SnakeAndLadder{
                 {
                        while( Position != ENDINGPOSITION )
 		      {
-               	      		int DICE = (int)Math.floor(Math.random()*10)%6;
-               			int ChooseOption = (int)Math.floor(Math.random()*10)%3;
+			        int dice = (random.nextInt(6)+1);
+        			System.out.println("The Dicenumber is:" +dice);
+				int ChooseOption = (int)Math.floor(Math.random()*10)%3;
                  		switch(ChooseOption)
                   		{
                      			case LADDER:
@@ -48,8 +49,6 @@ class SnakeAndLadder{
 			Dicecount++;
 			System.out.println("The Dicecount value is:" +Dicecount);
                     }
-
-
           }
      }
         public void twoPlayers()
