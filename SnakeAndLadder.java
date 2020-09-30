@@ -1,16 +1,18 @@
 import java.util.*;
 class SnakeAndLadder{
-   static final int STARTINGPOSITION = 0;
-   static final int ENDINGPOSITION = 100;
-   static final int LADDER = 1;
-   static final int SNAKE = 2;
-   static final int NOPLAY = 0;
-   static String Action;
-   static Random random = new Random();
-     public  void gamePlayed()
-     {
-	int Position = STARTINGPOSITION;
-   	int Dicecount = 0;
+	static final int STARTINGPOSITION = 0;
+   	static final int ENDINGPOSITION = 100;
+  	static final int LADDER = 1;
+   	static final int SNAKE = 2;
+   	static final int NOPLAY = 0;
+	static final int PLAYER = 0;
+   	static Random random = new Random();
+	static String Action;
+     	public  void gamePlayed()
+     	{
+		System.out.println("Game for single Player");
+		int Position = STARTINGPOSITION;
+   		int Dicecount = 0;
          	if(Position <= ENDINGPOSITION)
                 {
                        while( Position != ENDINGPOSITION )
@@ -82,11 +84,10 @@ class SnakeAndLadder{
                 }
                 System.out.println("Total Dice Count of both Players "+dice_count);
         }
-	public static void main(String args[])
-    	{
-    		System.out.println("Welcome to SnakeAndLadder Game");
-		SnakeAndLadder player = new SnakeAndLadder();
-	        player.gamePlayed();
-
-    	}
+		public static void main(String args[])
+    		{
+    			System.out.println("Welcome to SnakeAndLadder Game");
+			SnakeAndLadder player = new SnakeAndLadder();
+	        	player.gamePlayed();
+     		}
 }
