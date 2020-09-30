@@ -8,86 +8,36 @@ class SnakeAndLadder{
 	static final int PLAYER = 0;
    	static Random random = new Random();
 	static String Action;
-     	public  void gamePlayed()
-     	{
-		System.out.println("Game for single Player");
-		int Position = STARTINGPOSITION;
-   		int Dicecount = 0;
-         	if(Position <= ENDINGPOSITION)
+		public static void gamePlayed()
                 {
-                       while( Position != ENDINGPOSITION )
-		      {
-			        int dice = (random.nextInt(6)+1);
-        			System.out.println("The Dicenumber is:" +dice);
-				int ChooseOption = (int)Math.floor(Math.random()*10)%3;
-                 		switch(ChooseOption)
-                  		{
-                     			case LADDER:
+			int position = STARTINGPOSITION;
+                  	if(position <= ENDINGPOSITION)
+			{
+                        	System.out.println("Game for single Player");
+                        	int dice = (random.nextInt(6)+1);
+                        	System.out.println("The Dicenumber is:" +dice);
+				int chooseOption = (random.nextInt(3));
+				switch(chooseOption)
+				{
+	                     		case LADDER:
   						Action = "Ladder";
-                        		    	int CurrentPosition = Position + DICE;
-						if(CurrentPosition > ENDINGPOSITION)
-						{
-							System.out.println("NOPLAY");
-						}
-						else
-						{	
-							Position = Position + DICE;
-						}
-					break;
-                     			case SNAKE:
+                	        		position = position + dice;
+	                        	break;
+                      			case SNAKE:
                            			Action = "snake";
-                          			Position = Position - DICE;
-                                                if(Position < 0)
-                                                {
- 							Position = 0;
-                                                }
-                     				break;
+                          			position = position - dice;
+                     			break;
                      			case NOPLAY:
-                     	 			Action = "Noplay";
-                      				Position = Position;
-                     				break;
+                      				Action = "Noplay";
+                      				position = position;
+                      			break;
                   		}
-              		System.out.println("Dice value is: " +DICE+ " for " +Action+ " and the currentpostion is: " +Position);
-			Dicecount++;
-			System.out.println("The Dicecount value is:" +Dicecount);
-                    }
-          }
-     }
-        public void twoPlayers()
-        {
-                int Player1position = STARTINGPOSITION ;
-                int Player2position = STARTINGPOSITION ;
-                int dice_count = STARTINGPOSITION ;
-                System.out.println("Game Started by two player");
-                while( Player1position < ENDINGPOSITION && Player2position < ENDINGPOSITION )
-                {
-                        System.out.println("Player 1 :-  ");
-                        Player1position = GamePlayed(Player1position,dice_count);
-                        dice_count = dice_Player(dice_count);
-                        if(Player1position == ENDINGPOSITION)
-                        {
-                                break;
-                        }
-                        System.out.println("Player 2 :-  ");
-                        Player2position = GamePlayed(Player2position,dice_count);
-                        dice_count = dice_Player(dice_count);
-                }
-                if(Player1position == ENDINGPOSITION)
-                {
-                        System.out.println();
-                        System.out.println("Player 1 Won The Match ");
-                }
-                else if(Player2position == ENDINGPOSITION)
-                {
-                        System.out.println();
-                        System.out.println("Player 2 Won The Match ");
-                }
-                System.out.println("Total Dice Count of both Players "+dice_count);
-        }
+              			System.out.println("Dice value is: " +dice+ " for " +Action+ " and the currentpostion is: " +position);
+	       		}
+		}
 		public static void main(String args[])
     		{
     			System.out.println("Welcome to SnakeAndLadder Game");
-			SnakeAndLadder player = new SnakeAndLadder();
-	        	player.gamePlayed();
-     		}
+        		gamePlayed();
+    		}
 }
