@@ -25,16 +25,16 @@ class SnakeAndLadder{
 	                     			case LADDER:
   							action = "Ladder";
                 	        			int currentPosition = position + dice;
-						/*	if(currentPosition > ENDINGPOSITION)
+							if(currentPosition > ENDINGPOSITION)
 							{
-								System.out.println("Dice value is more than 100 so player is in same position");
+								System.out.println("Dice value is more than 100 so that player stay in the same position");
 							}
 							else
 							{
 								position = position + dice;
-							} */
+							}
 	                        		break;
-                      				case SNAKE:
+	        				case SNAKE:
                            				action = "snake";
                           				position = position - dice;
 							if(position < 0)
