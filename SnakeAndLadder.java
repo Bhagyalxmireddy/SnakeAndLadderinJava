@@ -12,6 +12,7 @@ class SnakeAndLadder{
 		public static void gamePlayed()
                 {
 			int position = STARTINGPOSITION;
+			int diceCount = 0;
                   	if(position <= ENDINGPOSITION)
 			{
 				System.out.println("Game for single Player");
@@ -48,6 +49,8 @@ class SnakeAndLadder{
                       				break;
                                       }
                                 System.out.println("The Dice value is " +dice+ "for" +action+ "and the current position is" +position);
+				diceCount ++;
+				System.out.println("The dice count is " +diceCount);
 				}
 			}
  		}
