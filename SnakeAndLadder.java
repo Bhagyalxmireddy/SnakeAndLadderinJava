@@ -6,7 +6,7 @@ class SnakeAndLadder{
    static final int SNAKE = 2;
    static final int NOPLAY = 0;
    static String Action;
-     public  void gamePlayed()
+     public void gamePlayed()
      {
 	int Position = STARTINGPOSITION;
          if(Position <= ENDINGPOSITION)
@@ -18,6 +18,12 @@ class SnakeAndLadder{
                      case LADDER:
   			Action = "Ladder";
                         Position = Position + DICE;
+   static Random random = new Random();
+     public static void gamePlayed()
+     {
+        int dice = (random.nextInt(6)+1);
+	System.out.println("The Dicenumber is:" +dice);
+     }
 
                      break;
                       case SNAKE:
