@@ -83,14 +83,11 @@ class SnakeAndLadder{
                 }
                 System.out.println("Total Dice Count of both Players "+dice_count);
         }
+	public static void main(String args[])
+    	{
+    		System.out.println("Welcome to SnakeAndLadder Game");
+		SnakeAndLadder player = new SnakeAndLadder();
+	        player.gamePlayed();
 
-
-    public static void main(String args[])
-    {
-    	System.out.println("Welcome to SnakeAndLadder Game");
-        SnakeAndLadder player = new SnakeAndLadder();
-	player.gamePlayed();
-    }
-
-
+    	}
 }
