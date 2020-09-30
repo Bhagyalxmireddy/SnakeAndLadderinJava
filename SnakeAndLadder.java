@@ -6,35 +6,51 @@ class SnakeAndLadder{
    	static final int SNAKE = 2;
    	static final int NOPLAY = 0;
 	static final int PLAYER = 0;
-   	static Random random = new Random();
-	static String Action;
+        static Random random = new Random();
+   	static String action;
+
 		public static void gamePlayed()
                 {
 			int position = STARTINGPOSITION;
                   	if(position <= ENDINGPOSITION)
 			{
-                        	System.out.println("Game for single Player");
-                        	int dice = (random.nextInt(6)+1);
-                        	System.out.println("The Dicenumber is:" +dice);
-				int chooseOption = (random.nextInt(3));
-				switch(chooseOption)
+				System.out.println("Game for single Player");
+				while(position != ENDINGPOSITION)
 				{
-	                     		case LADDER:
-  						Action = "Ladder";
-                	        		position = position + dice;
-	                        	break;
-                      			case SNAKE:
-                           			Action = "snake";
-                          			position = position - dice;
-                     			break;
-                     			case NOPLAY:
-                      				Action = "Noplay";
-                      				position = position;
-                      			break;
-                  		}
-              			System.out.println("Dice value is: " +dice+ " for " +Action+ " and the currentpostion is: " +position);
-	       		}
-		}
+                        		int dice = (random.nextInt(6)+1);
+                        		System.out.println("The Dicenumber is:" +dice);
+					int chooseOption = (random.nextInt(3));
+					switch(chooseOption)
+					{
+	                     			case LADDER:
+  							action = "Ladder";
+                	        			int currentPosition = position + dice;
+						/*	if(currentPosition > ENDINGPOSITION)
+							{
+								System.out.println("Dice value is more than 100 so player is in same position");
+							}
+							else
+							{
+								position = position + dice;
+							} */
+	                        		break;
+                      				case SNAKE:
+                           				action = "snake";
+                          				position = position - dice;
+							if(position < 0)
+							{
+								position = 0;
+							}
+                     				break;
+                     				case NOPLAY:
+                      					action = "Noplay";
+                      					position = position;
+                      				break;
+                                      }
+                                System.out.println("The Dice value is " +dice+ "for" +action+ "and the current position is" +position);
+				}
+			}
+ 		}
 		public static void main(String args[])
     		{
     			System.out.println("Welcome to SnakeAndLadder Game");
