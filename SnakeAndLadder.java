@@ -15,7 +15,7 @@ class SnakeAndLadder{
                   	if(position <= ENDINGPOSITION)
 			{
 				System.out.println("Game for single Player");
-				while(position != ENDINGPOSITION)
+				while(position < ENDINGPOSITION)
 				{
                         		int dice = (random.nextInt(6)+1);
                         		System.out.println("The Dicenumber is:" +dice);
