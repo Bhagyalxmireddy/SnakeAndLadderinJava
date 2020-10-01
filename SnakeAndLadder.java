@@ -8,7 +8,6 @@ class SnakeAndLadder{
         static final int PLAYER = 0;
         static final int PLAYER1 = 0;
         static final int PLAYER2 = 0;
-        static Random random = new Random();
         static String action;
         static int diceCount = 0;
         static int numberOfPlayers = 2;
@@ -27,6 +26,7 @@ class SnakeAndLadder{
                         for(int i = 0; i < playerarray.length; i++)
                         {
                                         System.out.println("player is:" +(i+1));
+					Random random = new Random();
                                         int dice = (random.nextInt(6)+1);
                                         System.out.println("The Dicenumber is:" +dice);
                                         diceCount ++;
