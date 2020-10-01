@@ -6,7 +6,6 @@ class SnakeAndLadder{
    	static final int SNAKE = 2;
    	static final int NOPLAY = 0;
 	static final int PLAYER = 0;
-        static Random random = new Random();
    	static String Action;
 
 		public static void gamePlayed()
@@ -15,6 +14,7 @@ class SnakeAndLadder{
                   	if(position <= ENDINGPOSITION)
 			{
                         	System.out.println("Game for single Player");
+ 				Random random = new Random();
                         	int dice = (random.nextInt(6)+1);
                         	System.out.println("The Dicenumber is:" +dice);
 				int chooseOption = (random.nextInt(3));
